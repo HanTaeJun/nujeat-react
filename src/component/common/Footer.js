@@ -3,9 +3,9 @@ import React from 'react';
 
 const Footer = (props) => {
     return (
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
+        <footer className="sticky-footer bg-white">
+            <div className="container my-auto">
+                <div className="copyright text-center my-auto">
                     <span>Nujeatan &copy; 2021 All rights reserved</span>
                 </div>
             </div>

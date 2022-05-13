@@ -8,8 +8,12 @@ import Footer from "./component/common/Footer";
 
 import MainPage from "./component/page/MainPage";
 import TestPage from "./component/page/TestPage";
+import CharViewPage from "./component/page/CharViewPage";
+import CharInfoPage from "./component/page/CharInfoPage";
 
-import axios from 'axios';
+
+
+// import axios from 'axios';
 
 function App() {
 
@@ -18,11 +22,20 @@ function App() {
     (i).height = iframeHeight + 20;
   }
 
+  function _bookweeks(_weeks, _d) {
+    for (var i = 0; i < _weeks.length; i++) {
+        if (_d == i) {
+            return _weeks[i];
+        }
+    }
+    return "";
+  }
+
   useEffect(() => {
     // 서버에서 받은 데이터를 console로 찍어서 확인한다.
-    axios.get('/api/test')
-    .then(res => console.log(res))
-    .catch();
+    // axios.get('/api/test')
+    // .then(res => console.log(res))
+    // .catch();
 
     if (windowWidth > 750 && window.localStorage.sidebarToggled == 'true') {
       $("body").toggleClass("sidebar-toggled");
@@ -464,12 +477,13 @@ function App() {
               <div className="container-fluid">
                 <div className="d-sm-flex align-items-center justify-content-between mb-4"></div>
                 <Routes>
-                  <Route path="/" element={<MainPage initData={initData} />} />
+                  <Route path="/" element={<MainPage initData={initData} _bookweeks={_bookweeks} />} />
                   <Route path="/info-charexp" element={<TestPage />} />
                   <Route path="/info-wepexp" element={<TestPage />} />
                   <Route path="/info-skillitem" element={<TestPage />} />
                   <Route path="/info-advrank" element={<TestPage />} />
-                  <Route path="/char-info" element={<TestPage />} />
+                  <Route path="/char-info" element={<CharInfoPage initData={initData} />} />
+                  <Route path="/char-info-view" element={<CharViewPage initData={initData} _bookweeks={_bookweeks} />} />
                   <Route path="/cal-charexp" element={<TestPage />} />
                   <Route path="/cal-wepexp" element={<TestPage />} />
                   <Route path="/cal-skillitem" element={<TestPage />} />

@@ -5,5 +5,9 @@ const router = express();
 router.get('/test', (req,res) => {
     res.send({ test : "this is test!!"});
 });
+
+router.post('/test', (req, res) => {
+    res.send({ test : "post message.."});
+})
  
 module.exports = router;

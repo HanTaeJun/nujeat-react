@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function indexCard(str) {
     window.location.href = "/" + str;
@@ -52,23 +52,14 @@ function charViewer(charName) {
     window.location.href = _src;
 }
 
-function _bookweeks(_weeks, _d) {
-    for (var i = 0; i < _weeks.length; i++) {
-        if (_d == i) {
-            return _weeks[i];
-        }
-    }
-    return "";
-}
-
 const MainPage = (props) => {
     const initData = props.initData;
 
     useEffect(() => {
         initPage(initData.characterData);
         var _todayTitleText = " ";
-        $("#book-day-wrap .card-header h6").text("::특성비경::" + _todayTitleText + _bookweeks(initData._weeks, initData._dayoftheweek) + "");
-        $("#weapon-day-wrap .card-header h6").text("::무기비경::" + _todayTitleText + _bookweeks(initData._weeks, initData._dayoftheweek));
+        $("#book-day-wrap .card-header h6").text("::특성비경::" + _todayTitleText + props._bookweeks(initData._weeks, initData._dayoftheweek) + "");
+        $("#weapon-day-wrap .card-header h6").text("::무기비경::" + _todayTitleText + props._bookweeks(initData._weeks, initData._dayoftheweek));
 
         var _todayBookText = "";
         for (var key in initData.booklist) {
