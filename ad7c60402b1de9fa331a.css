@@ -1,0 +1,35 @@
+.pointer {
+    cursor: pointer;
+}
+
+
+img.sojae {
+    width: 34px;
+}
+
+#content table td {
+    vertical-align: middle;
+}
+
+#rare-star {
+    /* background: linear-gradient(to right, #ffef5f, #ffc115); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    color: #ffc115;
+}
+
+.constrs {
+    width: 40px;
+    height: 40px;
+    padding: 6px 0px;
+    border: 2px solid #888;
+    border-radius: 100px;
+    display: inline-block;
+    margin: 0px 2px;
+}
+
+.constrs.active {
+    border-color: #000;
+    color: #FFF;
+    background-color: #888;
+}
